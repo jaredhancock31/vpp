@@ -27,6 +27,9 @@ systemctl unmask firewalld
 systemctl enable firewalld
 systemctl start firewalld
 
+systmectl daemon-reload
+systemctl restart kubelet
+
 firewall-cmd --permanent --add-port=12379-12380/tcp
 
 mkdir /etc/vpp/
