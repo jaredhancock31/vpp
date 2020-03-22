@@ -29,3 +29,5 @@ systemctl start firewalld
 
 firewall-cmd --permanent --add-port=12379-12380/tcp
 
+mkdir /etc/vpp/
+cp ./contiv-vswitch.conf /etc/vpp/
