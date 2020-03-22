@@ -1,6 +1,5 @@
 #!/bin/sh
 
-sudo su
 
 yum install -y yum -y install lshw
 modprobe uio_pci_generic
@@ -19,7 +18,7 @@ chmod +x bootstrap_centos.sh
 
 ./bootstrap_centos.sh
 
-yum -u update
+yum -y update
 
 docker images
 
