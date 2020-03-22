@@ -1,11 +1,12 @@
 #!/bin/sh
 
 
-yum install -y yum -y install lshw
+yum install -y lshw
 modprobe uio_pci_generic
 lsmod | grep uio
 lshw -class network -businfo
 
+sysctl -w vm.nr_hugepages=2048
 
 wget https://github.com/contiv/vpp/raw/master/k8s/setup-node.sh
 
@@ -20,6 +21,7 @@ chmod +x bootstrap_centos.sh
 
 yum -y update
 
+chown $USER:$USER /var/run/docker.sock
 docker images
 
 yum install firewalld
